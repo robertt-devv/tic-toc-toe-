@@ -1,0 +1,147 @@
+@font-face {
+    font-family: "MyFont"; src: url('_ttf/font00.otf');
+}
+
+*{padding: 0; margin:0;}
+    
+body {
+    width: 100%;
+    background-image: url('../_res/img_bg.jpg');
+    background-size: 100%;
+    background-position: 0 0;
+}
+
+@keyframes press {
+    50%{  opacity: 0;  font-weight: bolder; }
+}
+
+@keyframes blinker {
+    50%{
+        font-weight: bolder;
+        display: none;
+        text-shadow: 1px 1px #cecece;
+    }
+}
+            
+#display-points {
+    position: absolute;
+    display: block;
+    font-family: MyFont;
+    width: 30%;
+    margin-left: 65%;
+    margin-top: 3%;
+    padding: 0 0 3% 2%;
+    background: #f2f300;
+    box-shadow: 1px 3px 5px #000;
+}
+
+#display-points #notePin{
+    width: 17%;
+    margin-left: 70%;
+    margin-bottom: 8%;
+}
+
+#display-points h1 {
+    font-size: 3.8vw;
+    color: #00f;
+}
+
+#display-points h1 span{
+    font-size: 3.5vw;
+    margin-left: 3%;
+    color: #f00;
+}
+
+#authorSignature {
+    position: absolute;
+    left: 6%;
+    width: 10%;
+}
+
+#sheet {
+    background-color: #fff;
+    width: 90%;
+    box-shadow: 0px 2px 3px #000;
+    margin: 6% 5%;
+    padding: 20% 0 1% 0;
+
+}
+#board {
+    width: 60%;
+    margin: 15% 0 13% 18%;
+    position: relative;
+    background: none;
+    top: 14%; left: 2%;
+}
+
+#board #-cells {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    width: 100%;
+}
+
+#board #-cells .-box {
+    padding: 10%;
+    font-size: 11vw;
+    border: none;
+    color: #cecece;
+    font-family: MyFont;
+    text-align: center;
+    background-color: transparent;
+}
+
+#board .lines {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1px;
+    height: 1px;
+    padding: 0.3%;
+    background-color: #00f;
+    border-radius: 5px;
+}
+         
+#board #-xa0{left: 33%; top: 1%;}
+#board #-xa1{left: 67%; top: 1%;}
+#board #-xa2{left: 2%; top: 29%;}
+#board #-xa3{left: 2%; top: 65%;}
+
+#chatbot{
+    display: inline-block;
+    width: 100%;
+    padding: 4% 0;
+}
+
+#chatbot #msgText{
+    display: block;
+    float: right;
+    margin: 2% 5% 0 0;
+    padding: 3%;
+    width: 60%;
+    border: 1px solid #000;
+    box-shadow: 0px 1px 2px #000;
+    border-radius: 4px;
+    font-size: 2.6vw;
+    font-family: monospace;
+}
+
+#chatbot #chatPng{
+    width: 25%;
+    display: block;
+    margin-left: 3%;
+}
+
+#boardOptions {
+    width: 96%;
+    padding: 2% 0;
+}
+
+#boardOptions button{
+    font-family: MyFont;
+    font-size: 6vw;
+    padding: 2% 5%;
+    border: none;
+    color: #f10000;
+    margin: 0 10%;
+    background: none;
+}
