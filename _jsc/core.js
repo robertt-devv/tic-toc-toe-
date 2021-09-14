@@ -53,7 +53,7 @@ class Gcore {
     }
 
     cpuPlay() {
-        let pBoard = this.game_boardA; /* pBoard (p, "poteiro") */
+        let pBoard = this.game_boardA;
         let $1victory = this.haveWinner('X', 'y');
         let $2victory = this.haveWinner('O', 'y');
         try {
