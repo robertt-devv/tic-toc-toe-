@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic toc toe  by roberto.deev@gmail.com</title>
+    <link rel='stylesheet' href='_css/game.css'/>
+    <script src='_jsc/core.js'></script>
+    <script src='_jsc/anim.js'></script>
+    <script src='_jsc/main.js'></script>
+</head>
+
+<body lang='pt-br'>
+    <header id='display-points'>
+        <img src='_res/img_02.png' id='notePin'/>
+        <h1>Jogador X: <span id='pts_2'> 0 Pontos </span></h1>
+        <h1>Jogador O: <span id='pts_1'> 0 Pontos </span></h1>
+        <audio src='_res/src_01.wav' id='markHome'/>
+    </header>
+    
+    <img src='_res/img_04.jpg' id='authorSignature' onclick='t()'>
+    
+    <main id='sheet'>
+        <div  id='board'>
+            <div id='-cells'>
+                <div class ='-box' onclick='mark_home(0)'>E</div>
+                <div class ='-box' onclick='mark_home(1)'>M</div>
+                <div class ='-box' onclick='mark_home(2)'>A</div>
+                <div class ='-box' onclick='mark_home(3)'>N</div>
+                <div class ='-box' onclick='mark_home(4)'>U</div>
+                <div class ='-box' onclick='mark_home(5)'>E</div>
+                <div class ='-box' onclick='mark_home(6)'>L</div>
+                <div class ='-box' onclick='mark_home(7)'>L</div>
+                <div class ='-box' onclick='mark_home(8)'>E</div>
+            </div>
+        
+            <div class='lines' id='-xa0'></div>
+            <div class='lines' id='-xa1'></div>
+            <div class='lines' id='-xa2'></div>
+            <div class='lines' id='-xa3'></div>
+        </div>
+        
+        <div id='chatbot'>
+            <span id='msgText'></span>
+            <img  id='chatPng' src='_res/img_03.png'/>
+        </div>
+        
+        <div id='boardOptions'>
+            <button id='bntClean' onclick='clean_board()'>Limpar</button>
+            <button id='bntBack'>Voltar</button>
+        </div>
+    </main>
+</body>
+</html>
