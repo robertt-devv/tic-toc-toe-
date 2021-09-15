@@ -49,7 +49,7 @@ class Gcore {
 
     fakeIACode() {
         let pBoard = this.arrayGroup(this.game_boardA, 3);
-
+        /*entra o códico para armar jogadas */
     }
 
     cpuPlay() {
@@ -75,7 +75,7 @@ class Gcore {
         let preWin = (prewin == 'y') ? 1 : 0; /* pre vitoria */
 
         const victS = ['012', '345', '678', '036',
-                         '147', '258', '048', '246'] // indices de vitoria
+                       '147', '258', '048', '246'] // indices de vitoria
 
         let counter = 0; /* conta quantos, (1 || 2) ,  (X || O)  */
         let chJoker = 0; /* Caracter coringa (Zero), ver linha 7 */
@@ -90,8 +90,7 @@ class Gcore {
             if (preWin == 1 && chJoker == 1) { return victS[x]; } /* board -> 110 */
             if (preWin == 0 && counter == 3) { return victS[x]; } /* board -> 111 */
 
-            counter = 0;
-            chJoker = 0;
+            counter = 0; chJoker = 0;
         } //for1
 
         return NaN;
