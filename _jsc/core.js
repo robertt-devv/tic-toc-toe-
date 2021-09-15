@@ -48,8 +48,18 @@ class Gcore {
     }
 
     fakeIACode() {
-        let pBoard = this.arrayGroup(this.game_boardA, 3);
-        /*entra o códico para armar jogadas */
+        let aux = ['012','345','678','048',
+                   '036','147','258','246']
+                   
+        for (let x=0; x<9; x++){
+        for (let y=0; y<1; y++){
+        	if(Number(this.game_boardA[Number(aux[x][y])])  == 2){
+            if(Number(this.game_boardA[Number(aux[x][y+1])]) == 0){
+            }}
+        }}
+        
+        if (Number(this.game_boardA[4]) == 0) return 4;
+        
     }
 
     cpuPlay() {
