@@ -50,15 +50,28 @@ class Gcore {
     fakeIACode() {
         let aux = ['012','345','678','048',
                    '036','147','258','246']
-                   
-        for (let x=0; x<9; x++){
-        for (let y=0; y<1; y++){
-        	if(Number(this.game_boardA[Number(aux[x][y])])  == 2){
-            if(Number(this.game_boardA[Number(aux[x][y+1])]) == 0){
-            }}
-        }}
+        let count_a = 0; // Play X
+        let count_b = 0; // Play O
+        let jokerId = 0;
         
-        if (Number(this.game_boardA[4]) == 0) return 4;
+        for (let x=0; x<8; x++){
+        	for (let y=0; y<3; y++){
+        		if( this.game_boardA[Number(aux[x][y])] === 1 ){count_a++;}
+        		if( this.game_boardA[Number(aux[x][y])] === 2 ){count_b++;}
+            }
+            
+            jokerId = (count_a === 0 && count_b === 1 ) ? x : 0;
+            count_a = 0; count_b = 0;
+        }
+        
+        if (jokerId > 0 ) {
+        	let n_ind = aux[jokerId];
+            if (this.game_boardA[Number(n_ind.charAt(0))] == 0 ) {return n_ind.charAt(0);}
+            if (this.game_boardA[Number(n_ind.charAt(1))] == 0 ) {return n_ind.charAt(1);}
+            if (this.game_boardA[Number(n_ind.charAt(2))] == 0 ) {return n_ind.charAt(2);}
+        }
+        
+        console.log(this.game_boardA.indexOf('2'))
         
     }
 
@@ -72,8 +85,8 @@ class Gcore {
                 if (Number(pBoard[$1victory.charAt(lp)]) == 0) { return Number($1victory.charAt(lp)); }
             }
         } catch (errr) {
-            setTimeout(() => { this.fakeIACode() }, 2000)
-            //return this.fakeIACode()
+            //setTimeout(() => { this.fakeIACode() }, 1000)
+            return this.fakeIACode()
             console.log('erro, haveWine retornou NaN')
         }
     }
