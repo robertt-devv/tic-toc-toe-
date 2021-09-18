@@ -131,31 +131,10 @@ class Gcore {
         }
     }
 
-    haveWinner(player, prewin) {
-        let pBoard = this.game_boardA;
-
+    haveWinner(player) {
         let playID = (player == 'X') ? 1 : 2;
-        let preWin = (prewin == 'y') ? 1 : 0; /* pre vitoria */
-
-        const victS = ['012', '345', '678', '036',
-                       '147', '258', '048', '246'] // indices de vitoria
-
-        let counter = 0; /* conta quantos, (1 || 2) ,  (X || O)  */
-        let chJoker = 0; /* Caracter coringa (Zero), ver linha 7 */
-
-        for (let x = 0; x < 8; x++) { //for1
-            for (let y = 0; y < 3; y++) { //for2  
-                /*board [R,1,2,3,4..] victS[0][1] = 0, board[victS] = R */
-                let gbIdVal = Number(pBoard[victS[x][y]])
-                counter += (gbIdVal == playID) ? 1 : 0;
-                chJoker += (gbIdVal == 0) ? 1 : 0;
-            } //for2
-            if (preWin == 1 && chJoker == 1) { return victS[x]; } /* board -> 110 */
-            if (preWin == 0 && counter == 3) { return victS[x]; } /* board -> 111 */
-
-            counter = 0; chJoker = 0;
-        } //for1
-
+        let indices = this._search(playID,3);
+        if (indices !== 'NaN' ){ return indices; }
         return NaN;
     }
 
