@@ -48,16 +48,22 @@ class Gcore {
     }
     
     _search(symbol,length){
-    	let pBoard = this.game_boardA;
-    	
+    	let pBoard  = this.game_boardA;
+    	let counter = 0;
+    	let nIndice = 0;
     	const victS = ['012', '345', '678', '036',
     	               '147', '258', '048', '246']
     	               
     	for (let x=0; x<8; x++){
-    	for (let y=0; y<3; y++){
+    	for (let y=0; y<3; y++)
+    	{
+    		nIndice = Number(victS[x][y]);
+    		counter += ( pBoard[nIndice] == symbol ) ? 1 : 0;
+    		if ( counter == 3 ) return victS[x];
     		
-    	}
-    	}
+        } counter = 0; }
+        
+    	return 'NaN';
     }
 
     fakeIACode() {
