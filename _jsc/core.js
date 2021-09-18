@@ -47,23 +47,29 @@ class Gcore {
         return 1;
     }
     
-    _search(symbol,length){
-    	let pBoard  = this.game_boardA;
-    	let counter = 0;
-    	let nIndice = 0;
-    	const victS = ['012', '345', '678', '036',
-    	               '147', '258', '048', '246']
+    _search(player,length,joker){
+    	let gm_bo = this.game_boardA;
+    	
+    	let housesFound = 0; // oculipated houses
+    	let arrayIndice = 0; // array id
+    	let housesJoker = 0; // home joker 
+    	
+    	const victs= [  '012', '345', '678', '036',
+    	                '147', '258', '048', '246'    ];
     	               
     	for (let x=0; x<8; x++){
-    	for (let y=0; y<3; y++)
-    	{
-    		nIndice = Number(victS[x][y]);
-    		counter += ( pBoard[nIndice] == symbol ) ? 1 : 0;
-    		if ( counter == 3 ) return victS[x];
+    	for (let y=0; y<3; y++){
+    		arrayIndice = Number( victs[x][y] );
+    		housesFound += ( gm_bo [arrayIndice] == player ) ? 1 : 0;
+    		housesJoker += ( gm_bo [arrayIndice] == joker  ) ? 1 : 0;
     		
-        } counter = 0; }
+    		if ( housesFound == length && housesJoker >= 1){ 
+    			return victs[x];
+    		}
+    		
+        } housesFound = 0; housesJoker =0;}
         
-    	return 'NaN';
+    	return false;
     }
 
     fakeIACode() {
@@ -117,19 +123,22 @@ class Gcore {
 
     cpuPlay() {
         let brd = this.game_boardA;
-        let Xwn = this._search(1,2);
-        let Own = this._search(2,2);
+        let Xwn = this._search(1,2,0);
+        let Own = this._search(2,2,0);
+        let aux = false;
         
-        if ( !Xwn == 'NaN' || !Own == 'NaN' ) {
-        	
-        }
+       for (let lp=0; lp<3; lp++){
+       		if ( Xwn != false && brd[Xwn.charAt(lp)] == 0){ return Xwn.charAt(lp)}
+        	if ( Own != false && brd[Own.charAt(lp)] == 0){ return Own.charAt(lp)}
+       }
+       
         
     }
 
     haveWinner(player) {
         let playID = (player == 'X') ? 1 : 2;
-        let indices = this._search(playID,3);
-        if (indices !== 'NaN' ){ return indices; }
+        let indices = this._search(playID,3,playID);
+        if (indices != false ){ return indices; }
         return NaN;
     }
 
