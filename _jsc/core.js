@@ -46,6 +46,19 @@ class Gcore {
 
         return 1;
     }
+    
+    _search(symbol,length){
+    	let pBoard = this.game_boardA;
+    	
+    	const victS = ['012', '345', '678', '036',
+    	               '147', '258', '048', '246']
+    	               
+    	for (let x=0; x<8; x++){
+    	for (let y=0; y<3; y++){
+    		
+    	}
+    	}
+    }
 
     fakeIACode() {
         let aux = ['012','345','678','048',
