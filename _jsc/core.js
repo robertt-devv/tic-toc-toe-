@@ -116,19 +116,14 @@ class Gcore {
     }
 
     cpuPlay() {
-        let pBoard = this.game_boardA;
-        let $1victory = this.haveWinner('X', 'y');
-        let $2victory = this.haveWinner('O', 'y');
-        try {
-            for (let lp = 0; lp < 3; lp++) {
-                if (Number(pBoard[$2victory.charAt(lp)]) == 0) { return Number($2victory.charAt(lp)); }
-                if (Number(pBoard[$1victory.charAt(lp)]) == 0) { return Number($1victory.charAt(lp)); }
-            }
-        } catch (errr) {
-            //setTimeout(() => { this.fakeIACode() }, 1000)
-            return this.fakeIACode()
-            console.log('erro, haveWine retornou NaN')
+        let brd = this.game_boardA;
+        let Xwn = this._search(1,2);
+        let Own = this._search(2,2);
+        
+        if ( !Xwn == 'NaN' || !Own == 'NaN' ) {
+        	
         }
+        
     }
 
     haveWinner(player) {
