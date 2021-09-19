@@ -55,72 +55,40 @@ class Gcore {
     	let housesJoker = 0; // home joker 
     	
     	const victs= [  '012', '345', '678', '036',
-    	                '147', '258', '048', '246'    ];
+    	                '147', '258', '048', '246'  ];
     	               
-    	for (let x=0; x<8; x++){
-    	for (let y=0; y<3; y++){
+    	for (let x=0; x<8; x++) {
+    	for (let y=0; y<3; y++) {
     		arrayIndice = Number( victs[x][y] );
     		housesFound += ( gm_bo [arrayIndice] == player ) ? 1 : 0;
     		housesJoker += ( gm_bo [arrayIndice] == joker  ) ? 1 : 0;
     		
-    		if ( housesFound == length && housesJoker >= 1){ 
+    		if ( housesFound == length && housesJoker >= 1 ) { 
     			return victs[x];
     		}
     		
-        } housesFound = 0; housesJoker =0;}
+        } housesFound = 0; housesJoker =0; }
         
     	return false;
     }
-
-    fakeIACode() {
-        let aux = ['012','345','678','048',
-                   '036','147','258','246']
-                   
-        let count_a = 0; // Play X
-        let count_b = 0; // Play O
-        let jokerId = -1;
-        
-        for (let x=0; x<8; x++){
-        	for (let y=0; y<3; y++){
-        		if( this.game_boardA[Number(aux[x][y])] === 1 ){count_a++;}
-        		if( this.game_boardA[Number(aux[x][y])] === 2 ){count_b++;}
-            }
-            
-            if (count_a === 0 && count_b == 1 ){jokerId = x; break; }
-            count_a = 0; count_b = 0;
-        }
-        
-        if (jokerId > -1 ) {
-        	let n_ind = aux[jokerId];
-            if (this.game_boardA[Number(n_ind.charAt(0))] == 0 ) {return n_ind.charAt(0);}
-            if (this.game_boardA[Number(n_ind.charAt(1))] == 0 ) {return n_ind.charAt(1);}
-            if (this.game_boardA[Number(n_ind.charAt(2))] == 0 ) {return n_ind.charAt(2);}
-        }
-        
-        count_a = 0;
-        jokerId = -1;
-        
-        for (let x = 0; x<8; x++){
-        	for (let y = 0; y<3; y++){
-        		if( this.game_boardA[Number(aux[x][y])] === 1 ){count_a++;}
-        	}
-        	
-        	if ( count_a == 1 ){ jokerId = x; break; }  
-        	count_a = 0;
-        }
-        
-        if (jokerId > -1 ){
-        	for (let a=0; a<3; a++){
-        		if (this.game_boardA[aux[jokerId][a]] == 0 ){
-        			return aux[jokerId][a];
-        		}
-        	}
-        }
-        
-        
-        
+    
+    
+    fakeIaCode(){
+    	let board = this.game_boardA;
+    	if ( board[4] == 1 && board[2] == 0 ) return 2;
+    	if ( board[0] == 1 && board[2] == 1 && board[4] == 0 ) return 4;
+    	if ( board[6] == 1 || board[8] == 1 && board[4] == 0 ) return 4;
+    	if ( board[1] == 1 && board[7] == 0 ) return 7;
+    	if ( board[7] == 1 && board[1] == 0 ) return 1;
+    	if ( board[3] == 1 && board[5] == 0 ) return 5;
+    	if ( board[5] == 1 && board[3] == 0 ) return 3;
+    	
+    	if (board[4] == 2 && board[3] == 0 ) return 3;
+    	if (board[4] == 2 && board[5] == 0 ) return 5;
+    	
     }
 
+    
     cpuPlay() {
         let brd = this.game_boardA;
         let Xwn = this._search(1,2,0);
@@ -131,8 +99,8 @@ class Gcore {
        		if ( Xwn != false && brd[Xwn.charAt(lp)] == 0){ return Xwn.charAt(lp)}
         	if ( Own != false && brd[Own.charAt(lp)] == 0){ return Own.charAt(lp)}
        }
-       
-        
+    
+       return this.fakeIaCode();
     }
 
     haveWinner(player) {
