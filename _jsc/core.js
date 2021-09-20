@@ -11,6 +11,7 @@ class Gcore {
         return document.querySelectorAll(objName)
     }
 
+
     arrayGroup(src, groups) {
         let array = new Array()
         let _src = src.slice();
@@ -22,6 +23,7 @@ class Gcore {
         }
         return array
     }
+
 
     cleanBoard(objName) {
         let obj = this._$(objName);
@@ -79,7 +81,7 @@ class Gcore {
     	                 '345','480','543',
     	                 '642','741','840' ];
     	                 
-    	let learned = [ '042','147','206',
+    	let learned  = [ '042','147','206',
     	                '345','453','508',
     	                '608','748','802' ];
     	
@@ -92,7 +94,7 @@ class Gcore {
     	    let _nb2 = Number(deadlock[x][y]);
     	    
     	    if ( board[_nb1] == 1 && board[_nb2] == 0 ){
-    	    	console.log(`deadlock: ${board[x]} :${deadlock[x][y]}`)
+    	    	//console.log(`deadlock: ${board[x]} :${deadlock[x][y]}`)
     	    	return Number(deadlock[x][y]);
     	    	
     	    }
@@ -105,7 +107,7 @@ class Gcore {
     	    let _nb2 = Number(learned[x][y]);
     	    
     	    if ( board[_nb1] == 2 && board[_nb2] == 0 ){
-    	    	console.log(`learned: ${board[x]} :${learned[x][y]}`)
+    	    	//console.log(`learned: ${board[x]} :${learned[x][y]}`)
     	    	return Number(learned[x][y]);
     	    	
     	    }
@@ -120,8 +122,8 @@ class Gcore {
         let aux = false;
         
        for (let lp=0; lp<3; lp++){
+       	    if ( Own != false && brd[Own.charAt(lp)] == 0){ return Own.charAt(lp)}
        		if ( Xwn != false && brd[Xwn.charAt(lp)] == 0){ return Xwn.charAt(lp)}
-        	if ( Own != false && brd[Own.charAt(lp)] == 0){ return Own.charAt(lp)}
        }
     
        return this.fakeIaCode();
