@@ -74,18 +74,42 @@ class Gcore {
     
     
     fakeIaCode(){
+    	
+    	let deadlock = [ '048','147','246',
+    	                 '345','480','543',
+    	                 '642','741','840' ];
+    	                 
+    	let learned = [ '042','147','206',
+    	                '345','453','508',
+    	                '608','748','802' ];
+    	
     	let board = this.game_boardA;
-    	if ( board[4] == 1 && board[2] == 0 ) return 2;
-    	if ( board[0] == 1 && board[2] == 1 && board[4] == 0 ) return 4;
-    	if ( board[6] == 1 || board[8] == 1 && board[4] == 0 ) return 4;
-    	if ( board[1] == 1 && board[7] == 0 ) return 7;
-    	if ( board[7] == 1 && board[1] == 0 ) return 1;
-    	if ( board[3] == 1 && board[5] == 0 ) return 5;
-    	if ( board[5] == 1 && board[3] == 0 ) return 3;
     	
-    	if (board[4] == 2 && board[3] == 0 ) return 3;
-    	if (board[4] == 2 && board[5] == 0 ) return 5;
+    	for (let x=0; x<9; x++){
+    	for (let y=1; y<2; y++){
+    		
+    		let _nb1 = Number(deadlock[x][0]);
+    	    let _nb2 = Number(deadlock[x][y]);
+    	    
+    	    if ( board[_nb1] == 1 && board[_nb2] == 0 ){
+    	    	console.log(`deadlock: ${board[x]} :${deadlock[x][y]}`)
+    	    	return Number(deadlock[x][y]);
+    	    	
+    	    }
+    	}}
     	
+    	for (let x=0; x<9; x++){
+    	for (let y=1; y<3; y++){
+    		
+    		let _nb1 = Number(learned[x][0]);
+    	    let _nb2 = Number(learned[x][y]);
+    	    
+    	    if ( board[_nb1] == 2 && board[_nb2] == 0 ){
+    	    	console.log(`learned: ${board[x]} :${learned[x][y]}`)
+    	    	return Number(learned[x][y]);
+    	    	
+    	    }
+    	}}
     }
 
     
