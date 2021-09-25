@@ -13,7 +13,7 @@ var victoryTexts = new Array();
 
 window.onload = function() {
     anim.borderDraw('.lines'); // animation X and Y lines 
-    anim.pressHome('.-box'); // animation press home
+   // anim.pressHome('.-box'); // animation press home
 }
 
 var core = new Gcore();
@@ -53,22 +53,23 @@ function mark_home(lp){
     if ( typeGame == 2 ){
         if (core.markHome('.-box',turnPlayer,lp) == 0 ){
             anim.playSound('#markHome');
-            anim.pressHome('.-box');
+            anim.pressedCell('.-box',lp);
             turnPlayer = (turnPlayer == 'X') ? 'O' : 'X';
         }
     }else{
         if (turnPlayer === 'X'){
             let status = core.markHome('.-box','X',lp);
-            anim.pressHome('.-box');
+            anim.pressedCell('.-box',lp);
             if (status == 0) turnPlayer = 'O';
         }
         core.markHome('.-box','O',core.cpuPlay());
-        anim.pressHome('.-box');
+      //  anim.pressHome('.-box');
         turnPlayer = 'X';
     }
 }
     
 function clean_board(){
     core.cleanBoard('.-box');
+    anim.clearBoard('.-box');
     iCanPlay = true;
 }

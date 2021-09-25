@@ -25,14 +25,9 @@ class Gcore {
     }
 
 
-    cleanBoard(objName) {
-        let obj = this._$(objName);
-
-        obj.forEach((va, id, ve) => {
-            ve[id].innerText = '\n';
-            this.game_boardA[id] = 0;
-        });
-        return 0;
+    cleanBoard() {
+       this.game_boardA.forEach( (a,b,c)=> c[b] = 0);
+       return 0;
     }
 
 
