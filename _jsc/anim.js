@@ -5,7 +5,7 @@ class Ganim extends Gcore{
 		
 		for (let lp=0; lp<2; lp++){
 			board[lp].style  = 'transition: 1s; height: 96%;'
-			board[lp+2].style = 'transition: .5s; width: 96%;'
+			board[lp+2].style = 'transition: 20s; width: 96%;'
 		}
 	}
 	

@@ -53,14 +53,17 @@ function mark_home(lp){
     if ( typeGame == 2 ){
         if (core.markHome('.-box',turnPlayer,lp) == 0 ){
             anim.playSound('#markHome');
+            anim.pressHome('.-box');
             turnPlayer = (turnPlayer == 'X') ? 'O' : 'X';
         }
     }else{
         if (turnPlayer === 'X'){
             let status = core.markHome('.-box','X',lp);
+            anim.pressHome('.-box');
             if (status == 0) turnPlayer = 'O';
         }
         core.markHome('.-box','O',core.cpuPlay());
+        anim.pressHome('.-box');
         turnPlayer = 'X';
     }
 }

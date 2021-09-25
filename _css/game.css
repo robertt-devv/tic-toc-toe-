@@ -132,8 +132,11 @@ body {
 }
 
 #boardOptions {
-    width: 96%;
+	display: grid;
+	grid-template-columns: 50% 50%;
+    width: 100%;
     padding: 2% 0;
+    /*background: red;*/
 }
 
 #boardOptions button{
@@ -143,5 +146,16 @@ body {
     border: none;
     color: #f10000;
     margin: 0 10%;
+    width: auto;
     background: none;
+}
+
+#foter p{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	font-size: 2.2vw;
+	background: red;
+	padding: 0.4% 0;
 }
