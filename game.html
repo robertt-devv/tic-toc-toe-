@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='_css/game.css'/>
     <script src='_jsc/core.js'></script>
     <script src='_jsc/anim.js'></script>
-    <script src='_jsc/main.js'></script>
+    <script src='_jsc/game.js'></script>
 </head>
 
 <body lang='pt-br'>
@@ -24,15 +24,15 @@
     <main id='sheet'>
         <div  id='board'>
             <div id='-cells'>
-                <div class ='-box' onclick='mark_home(0)'>&nbsp;</div>
-                <div class ='-box' onclick='mark_home(1)'></div>
-                <div class ='-box' onclick='mark_home(2)'></div>
-                <div class ='-box' onclick='mark_home(3)'></div>
-                <div class ='-box' onclick='mark_home(4)'></div>
-                <div class ='-box' onclick='mark_home(5)'></div>
-                <div class ='-box' onclick='mark_home(6)'></div>
-                <div class ='-box' onclick='mark_home(7)'></div>
-                <div class ='-box' onclick='mark_home(8)'></div>
+                <div class ='-box' onclick='mark_cell(0)'>&nbsp;</div>
+                <div class ='-box' onclick='mark_cell(1)'></div>
+                <div class ='-box' onclick='mark_cell(2)'></div>
+                <div class ='-box' onclick='mark_cell(3)'></div>
+                <div class ='-box' onclick='mark_cell(4)'></div>
+                <div class ='-box' onclick='mark_cell(5)'></div>
+                <div class ='-box' onclick='mark_cell(6)'></div>
+                <div class ='-box' onclick='mark_cell(7)'></div>
+                <div class ='-box' onclick='mark_cell(8)'></div>
             </div>
         
             <div class='lines' id='-xa0'></div>
@@ -42,11 +42,13 @@
         </div>
         
         <div id='chatbot'>
-            <span id='msgText'></span>
+            <!-- span id='msgText'>
+                É melhor calar-se e deixar que as pessoas pensem que você é um idiota do que falar e acabar com a dúvida.
+            </span -->
             <img  id='chatPng' src='_res/img_03.png'/>
         </div>
         
-        <div id='boardOptions'>
+        <div id='boardOptions'>           
             <button id='bntClean' onclick='clean_board()'>Limpar</button>
             <button id='bntBack'>Voltar</button>
         </div>

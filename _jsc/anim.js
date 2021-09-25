@@ -40,6 +40,8 @@ class Ganim extends Gcore{
 		);
 	}
 	
+	
+	/*
 	sleep(ms) {
 	    return new Promise(resolve => setTimeout(resolve, ms));
 	}
@@ -53,5 +55,5 @@ class Ganim extends Gcore{
 	       obj.innerHTML += text.charAt(lp);
 	    }
 	}
-	
+	*/
 }

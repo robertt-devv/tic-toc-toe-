@@ -26,7 +26,7 @@ class Gcore {
 
 
     cleanBoard() {
-       this.game_boardA.forEach( (a,b,c)=> c[b] = 0);
+       this.game_boardA.forEach( (a,b,c) => c[b] = 0);
        return 0;
     }
 
