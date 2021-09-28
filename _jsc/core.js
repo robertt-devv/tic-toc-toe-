@@ -116,7 +116,7 @@ class Gcore {
         let Own = this._search(2,2,0);
         let aux = false;
         
-       for (let lp=0; lp<3; lp++){
+       for (let lp=0; lp<3; lp++) {
        	    if ( Own != false && brd[Own.charAt(lp)] == 0){ return Own.charAt(lp)}
        		if ( Xwn != false && brd[Xwn.charAt(lp)] == 0){ return Xwn.charAt(lp)}
        }

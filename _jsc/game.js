@@ -1,5 +1,5 @@
-let core = new Gcore(); // class core, contain all game functions
-let anim = new Ganim(); // class anim, contain all anime functions
+const core = new Gcore(); // class core, contain all game functions
+const anim = new Ganim(); // class anim, contain all anime functions
 
 
 let iCanPlay = true; // if play X 
@@ -47,6 +47,7 @@ function clean_board() {
     core.cleanBoard();
     anim.clearBoard('.-box');
     iCanPlay = true;
+    playTurn = 'X';
 }
     
 document.onclick = ()=> {
