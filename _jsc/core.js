@@ -44,6 +44,7 @@ class Gcore {
         return 1;
     }
     
+    
     _search(player,length,joker){
     	let gm_bo = this.game_boardA;
     	
