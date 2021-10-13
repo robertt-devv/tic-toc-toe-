@@ -1,10 +1,9 @@
-- Este é um projeto muito saturado nesse meio. Sei que há trocentos projetos iguais, melhores e inferiores, sei também que não é algo relativamente difícil de se codar. Para a maioria dos devs que estão iniciando, este é um job bobo, algo que não agrega muito ao conhecimento pessoal. Mas confesso que gostei de codar, aprendi ferramentas,funções e conceitos novos que não sabia sobre o  **JavaScript** .  Me diverti, fiquei frustado e quebrei muito a cabeça em funções onde eu não tinha conhecimento sulficiente para codar. 
+Este é um projeto muito saturado nesse meio. Sei que há trocentos projetos iguais, melhores e inferiores, sei também que não é algo relativamente difícil de se codar. Para a maioria dos devs que estão iniciando, este é um job bobo, algo que não agrega muito ao conhecimento pessoal. Mas confesso que gostei de codar, aprendi ferramentas,funções e conceitos novos que não sabia sobre o  **JavaScript** .  Me diverti, fiquei frustado e quebrei muito a cabeça em funções onde eu não tinha conhecimento sulficiente para codar. 
 
-<img src="_res/rd_im_01.jpg"/>
 
 -------
 
-- Entretanto, com toda a dor de cabeça e frustações, tenho orgulho de algumas funções que me deram um pouco de dor de cabeça, e quero explicar aqui seu funcionamento ao ter que documentalas, como disse: tenho orgulho delas, sei que provavelmente ninguém vai ler isso, mas se vc que esta vendo isso, for bem mais experiente que eu, não ache que sou louco por ficar animado com funções que provavelmente vc faria por cabeça.  <br/><br/>
+Entretanto, com toda a dor de cabeça e frustações, tenho orgulho de algumas funções que me deram um pouco de dor de cabeça, e quero explicar aqui seu funcionamento ao ter que documentalas, como disse: tenho orgulho delas, sei que provavelmente ninguém vai ler isso, mas se vc que esta vendo isso, for bem mais experiente que eu, não ache que sou louco por ficar animado com funções que provavelmente vc faria por cabeça.  <br/><br/>
 
 
 1. ####    `_search(player,length,joker)`
@@ -16,7 +15,7 @@
 
 - Apesar de qualquer um poder entender seu funcionamento (Em mimha defesa tenho leves aspectos de um portador de T.O.C ), Para quem está iniciando ("como eu"). vou explica como ela funciona, e poque não usala em jobs reais que lhe foram solicitados.
 
-- Veja a variável `gm_bo` ela é responsavel por referenciar o tabulerio (que é um array simples de 9 posições) assim evito digitar o operador `this` toda vez que precisar acessar algum índice do tabuleiro. Os parametros `Player, length, joker ` são usadas para controlar que tipo de verificação será feita, eles que tornam a função multi-uso. 
+- Veja a variável ```javaScript gm_bo``` ela é responsavel por referenciar o tabulerio (que é um array simples de 9 posições) assim evito digitar o operador `this` toda vez que precisar acessar algum índice do tabuleiro. Os parametros `Player, length, joker ` são usadas para controlar que tipo de verificação será feita, eles que tornam a função multi-uso. 
 
 - temos também 3 variaveis de controle interno, `housesFound, arrayIndice, housesJoker `, essas váriaveis trabalham em paralelo aos argumentos passados, por enquanto é só isso que vc precisa saber.
 
